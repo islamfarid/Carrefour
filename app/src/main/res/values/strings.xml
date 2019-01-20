@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Carrefour</string>
+    <string name="error_general">opps some thing went wrong</string>
 </resources>
