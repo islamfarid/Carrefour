@@ -1,9 +1,13 @@
-package com.example.carrefour.news_details;
+package com.example.carrefour.news_list;
 
+
+import android.content.Intent;
 
 import com.example.carrefour.R;
 import com.example.carrefour.app.BaseFragment;
+import com.example.carrefour.common.Constants;
 import com.example.carrefour.data.models.api.ArticlesItem;
+import com.example.carrefour.news_details.NewsDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -22,7 +26,6 @@ public class NewsListFragment extends BaseFragment implements NewsListContract.V
 
     @Override
     protected void init() {
-        setRetainInstance(true);
         ((NewsListContract.Presenter) mPresenter).getUpdatedArticles(false);
         mArticlesSwipeRefresh.setOnRefreshListener(() -> {
             ((NewsListContract.Presenter) mPresenter).getUpdatedArticles(true);
@@ -41,9 +44,7 @@ public class NewsListFragment extends BaseFragment implements NewsListContract.V
     @Override
     public void displayArticlesList(ArrayList<ArticlesItem> articlesItems) {
         if (mNewsListAdapter == null) {
-            mNewsListAdapter = new NewsListAdapter(getActivity(), item -> {
-                //do some thing
-            }, articlesItems);
+            mNewsListAdapter = new NewsListAdapter(getActivity(), item -> goToDetailsScreen((ArticlesItem) item), articlesItems);
             mRVArticles.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
             mRVArticles.setLayoutManager(new LinearLayoutManager(getActivity()));
             mRVArticles.setAdapter(mNewsListAdapter);
@@ -51,6 +52,12 @@ public class NewsListFragment extends BaseFragment implements NewsListContract.V
         } else {
             mNewsListAdapter.updateArticlesListItems(articlesItems);
         }
+    }
+
+    private void goToDetailsScreen(ArticlesItem item) {
+        Intent intent = new Intent(getActivity(), NewsDetailsActivity.class);
+        intent.putExtra(Constants.ARTICLE, item);
+        startActivity(intent);
     }
 
     @Override

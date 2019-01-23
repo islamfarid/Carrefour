@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".news_list.NewsListActivity">
+    tools:context=".news_details.NewsDetailsActivity">
 
     <FrameLayout
         android:id="@+id/contentFrame"

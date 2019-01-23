@@ -1,4 +1,4 @@
-package com.example.carrefour.news_details;
+package com.example.carrefour.news_list;
 
 import com.example.carrefour.common.Constants;
 import com.example.carrefour.data.AppRepository;

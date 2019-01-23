@@ -1,10 +1,7 @@
-package com.example.carrefour.news_details;
+package com.example.carrefour.news_list;
 
 
 import com.example.carrefour.common.EspressoIdlingResource;
-
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
@@ -18,9 +15,9 @@ public class NewsListPresenter implements NewsListContract.Presenter {
     private CompositeDisposable mSubscriptions;
 
     @Inject
-    public NewsListPresenter(NewsListContract.View view, NewsListBusiness videoListBusiness) {
+    public NewsListPresenter(NewsListContract.View view, NewsListBusiness newsListBusiness) {
         this.mView = view;
-        this.mNewsListBusiness = videoListBusiness;
+        this.mNewsListBusiness = newsListBusiness;
         mSubscriptions = new CompositeDisposable();
         mView.setPresenter(this);
     }

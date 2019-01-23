@@ -1,14 +1,14 @@
-package com.example.carrefour.news_details.di;
+package com.example.carrefour.news_list.di;
 
 
 import com.example.carrefour.R;
 import com.example.carrefour.common.ActivityUtils;
 import com.example.carrefour.data.AppRepository;
-import com.example.carrefour.news_details.NewsListActivity;
-import com.example.carrefour.news_details.NewsListBusiness;
-import com.example.carrefour.news_details.NewsListContract;
-import com.example.carrefour.news_details.NewsListFragment;
-import com.example.carrefour.news_details.NewsListPresenter;
+import com.example.carrefour.news_list.NewsListActivity;
+import com.example.carrefour.news_list.NewsListBusiness;
+import com.example.carrefour.news_list.NewsListContract;
+import com.example.carrefour.news_list.NewsListFragment;
+import com.example.carrefour.news_list.NewsListPresenter;
 
 import dagger.Module;
 import dagger.Provides;

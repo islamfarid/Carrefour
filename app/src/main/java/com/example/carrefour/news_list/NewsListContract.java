@@ -1,4 +1,4 @@
-package com.example.carrefour.news_details;
+package com.example.carrefour.news_list;
 
 
 

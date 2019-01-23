@@ -1,4 +1,4 @@
-package com.example.carrefour.news_details;
+package com.example.carrefour.news_list;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ArticlesViewHolder> {
     private Context mContext;
@@ -73,10 +74,10 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Articl
             ButterKnife.bind(this, itemView);
         }
 
-//        @OnClick(R.id.rl_search_full_layout)
-//        void onListItemClick() {
-//            mOnListItemSelected.onVideoSelected(mArticlesList.get(getAdapterPosition()));
-//        }
+        @OnClick(R.id.rl_item_image)
+        void onListItemClick() {
+            mOnListItemSelected.onItemSelected(mArticlesList.get(getAdapterPosition()));
+        }
 
     }
 
