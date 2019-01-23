@@ -1,7 +1,8 @@
 package com.example.carrefour.data.models.api;
 
-import java.util.List;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
 
 public class NewsResponseModel{
 
@@ -9,7 +10,7 @@ public class NewsResponseModel{
 	private int totalResults;
 
 	@SerializedName("articles")
-	private List<ArticlesItem> articles;
+	private ArrayList<ArticlesItem> articles;
 
 	@SerializedName("status")
 	private String status;
@@ -22,11 +23,11 @@ public class NewsResponseModel{
 		return totalResults;
 	}
 
-	public void setArticles(List<ArticlesItem> articles){
+	public void setArticles(ArrayList<ArticlesItem> articles){
 		this.articles = articles;
 	}
 
-	public List<ArticlesItem> getArticles(){
+	public ArrayList<ArticlesItem> getArticles(){
 		return articles;
 	}
 
